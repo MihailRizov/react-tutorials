@@ -14,7 +14,8 @@
           "test",
           "e2e"
         ],
-        "accessToken": "MmI1MzYwMDAtMDg0Mi00YzhiLTg3YWMtNmQwNWYwOTNhMzAwfHJlYWQtd3JpdGU="
+        "accessToken": "MmI1MzYwMDAtMDg0Mi00YzhiLTg3YWMtNmQwNWYwOTNhMzAwfHJlYWQtd3JpdGU=",
+        "useDaemonProcess": false
       }
     }
   },

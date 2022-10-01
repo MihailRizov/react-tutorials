@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "start-track": "nx serve --project=expense-tracker",
+    "start-track": "yarn start --project=expense-tracker",
     "create-component": "nx g component",
     "create-track-cmp": "yarn create-component --project=expense-tracker",
     "build": "nx build",

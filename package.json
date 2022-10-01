@@ -4,6 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start-track": "nx serve --project=expense-tracker",
+    "create-component": "nx g component",
+    "create-track-cmp": "yarn create-component --project=expense-tracker",
     "build": "nx build",
     "test": "nx test"
   },
@@ -12,6 +15,7 @@
     "core-js": "^3.6.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "6.3.0",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"
   },
@@ -30,6 +34,7 @@
     "@types/node": "16.11.7",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@types/react-router-dom": "5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "28.1.1",

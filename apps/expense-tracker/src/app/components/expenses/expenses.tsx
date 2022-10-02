@@ -13,7 +13,7 @@ interface Expenses extends ExpenseItemProps {
   id: string;
 }
 
-export function Expenses(props: ExpensesProps) {
+export const Expenses = (props: ExpensesProps) => {
   const { items } = props;
   return (
     <Card className={styles['expenses']}>
@@ -27,6 +27,6 @@ export function Expenses(props: ExpensesProps) {
       ))}
     </Card>
   );
-}
+};
 
 export default Expenses;

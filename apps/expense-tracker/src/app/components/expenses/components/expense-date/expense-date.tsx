@@ -5,7 +5,7 @@ export interface ExpenseDateProps {
   date: Date;
 }
 
-export function ExpenseDate(props: ExpenseDateProps) {
+export const ExpenseDate = (props: ExpenseDateProps) => {
   const { date } = props;
   const dateLocaleOption = 'en-us';
   const getMonth = (date: Date): string => {
@@ -27,6 +27,6 @@ export function ExpenseDate(props: ExpenseDateProps) {
       <div className={styles['expense-date__day']}>{getDay(date)}</div>
     </div>
   );
-}
+};
 
 export default ExpenseDate;

@@ -9,7 +9,7 @@ export interface ExpenseItemProps {
   amount: number;
 }
 
-export function ExpenseItem(props: ExpenseItemProps) {
+export const ExpenseItem = (props: ExpenseItemProps) => {
   const { title, date, amount } = props;
 
   return (
@@ -21,6 +21,6 @@ export function ExpenseItem(props: ExpenseItemProps) {
       </div>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;

@@ -12,7 +12,7 @@ describe('Expenses', () => {
     },
   ];
   it('should render successfully', () => {
-    const { baseElement } = render(<Expenses expenses={mockExpenses} />);
+    const { baseElement } = render(<Expenses items={mockExpenses} />);
     expect(baseElement).toBeTruthy();
   });
 });

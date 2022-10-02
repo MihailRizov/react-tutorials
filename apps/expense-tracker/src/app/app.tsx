@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import Expenses from './components/expenses/expenses/expenses';
+import Expenses from './components/expenses/expenses';
 
 export function App() {
   const expenses = [

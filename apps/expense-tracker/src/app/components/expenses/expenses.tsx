@@ -1,7 +1,7 @@
-import Card from '../../card/card/card';
+import Card from '../UI/card/card';
 import ExpenseItem, {
   ExpenseItemProps,
-} from '../../expense-item/expense-item/expense-item';
+} from '../expenses/components/expense-item/expense-item';
 import styles from './expenses.module.scss';
 
 /* eslint-disable-next-line */

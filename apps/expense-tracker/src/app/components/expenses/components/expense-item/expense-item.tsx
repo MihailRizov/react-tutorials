@@ -1,5 +1,5 @@
-import Card from '../../card/card/card';
-import ExpenseDate from '../../expense-date/expense-date/expense-date';
+import Card from '../../../UI/card/card';
+import ExpenseDate from '../expense-date/expense-date';
 import styles from './expense-item.module.scss';
 
 /* eslint-disable-next-line */

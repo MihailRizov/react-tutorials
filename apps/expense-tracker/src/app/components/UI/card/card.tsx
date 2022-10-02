@@ -6,11 +6,11 @@ export interface CardProps {
   className: string;
 }
 
-export function Card(props: CardProps) {
+export const Card = (props: CardProps) => {
   const { className, children } = props;
   const classes = `${styles['card']} + ${className}`;
 
   return <section className={classes}>{children}</section>;
-}
+};
 
 export default Card;

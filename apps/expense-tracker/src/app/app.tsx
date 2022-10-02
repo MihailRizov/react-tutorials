@@ -2,7 +2,7 @@
 import styles from './app.module.scss';
 import Expenses from './components/expenses/expenses';
 
-export function App() {
+export const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -31,6 +31,6 @@ export function App() {
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;

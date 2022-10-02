@@ -1,3 +1,4 @@
+import Card from '../../card/card/card';
 import ExpenseItem, {
   ExpenseItemProps,
 } from '../../expense-item/expense-item/expense-item';
@@ -5,7 +6,7 @@ import styles from './expenses.module.scss';
 
 /* eslint-disable-next-line */
 export interface ExpensesProps {
-  expenses: Expenses[];
+  items: Expenses[];
 }
 
 interface Expenses extends ExpenseItemProps {
@@ -13,18 +14,18 @@ interface Expenses extends ExpenseItemProps {
 }
 
 export function Expenses(props: ExpensesProps) {
-  const { expenses } = props;
+  const { items } = props;
   return (
-    <section className='expenses'>
-      {expenses.map((expense: Expenses) => (
+    <Card className={styles['expenses']}>
+      {items.map((item: Expenses) => (
         <ExpenseItem
-          title={expense.title}
-          date={expense.date}
-          amount={expense.amount}
-          key={expense.id}
+          title={item.title}
+          date={item.date}
+          amount={item.amount}
+          key={item.id}
         />
       ))}
-    </section>
+    </Card>
   );
 }
 

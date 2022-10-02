@@ -1,3 +1,4 @@
+import Card from '../../card/card/card';
 import ExpenseDate from '../../expense-date/expense-date/expense-date';
 import styles from './expense-item.module.scss';
 
@@ -12,13 +13,13 @@ export function ExpenseItem(props: ExpenseItemProps) {
   const { title, date, amount } = props;
 
   return (
-    <div className={styles['expense-item']}>
+    <Card className={styles['expense-item']}>
       <ExpenseDate date={date} />
       <div className={styles['expense-item__description']}>
         <h2> {title} </h2>
         <div className={styles['expense-item__price']}>${amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 

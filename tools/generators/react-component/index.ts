@@ -25,7 +25,7 @@ export default async function (host: Tree, schema: any) {
       /* eslint-disable-next-line */
       export interface ${className}Props {}
 
-      export const ${className} = (props: ${className}Props) => {
+      const ${className} = (props: ${className}Props) => {
         return(
           <div className={styles['']}>
           The ${className} works!

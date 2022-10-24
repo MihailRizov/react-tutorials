@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
 import Expenses from './components/expenses/expenses';
+import NewExpense from './components/new-expense/new-expense';
 
 export const App = () => {
   const expenses = [
@@ -27,7 +28,7 @@ export const App = () => {
 
   return (
     <div>
-      <h1>Let's get started!</h1>
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );

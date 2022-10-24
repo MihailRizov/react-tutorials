@@ -1,13 +1,30 @@
-import ExpenseForm from './components/expense-form/expense-form';
+import ExpenseForm, {
+  ExpenseData,
+} from './components/expense-form/expense-form';
 import styles from './new-expense.module.scss';
 
-/* eslint-disable-next-line */
-export interface NewExpenseProps {}
+export interface Expense extends ExpenseData {
+  id: string;
+}
+
+export interface NewExpenseProps {
+  onAddExpense: (expense: Expense) => void;
+}
 
 const NewExpense = (props: NewExpenseProps) => {
+  const { onAddExpense } = props;
+  const saveExpenseDataHandler = (enteredExpenseData: ExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString(),
+    };
+
+    onAddExpense(expenseData);
+  };
+
   return (
     <div className={styles['new-expense']}>
-      <ExpenseForm />
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useState } from 'react';
 import styles from './app.module.scss';
 import Expenses from './components/expenses/expenses';
-import NewExpense from './components/new-expense/new-expense';
+import NewExpense, { Expense } from './components/new-expense/new-expense';
 
 export const App = () => {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -24,11 +25,15 @@ export const App = () => {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+
+  const addExpenseHandler = (expense: Expense) => {
+    setExpenses((prevState: Expense[]) => [...prevState, expense]);
+  };
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

@@ -9,6 +9,8 @@ export default async function (host: Tree, schema: any) {
   const rootDirectory = `app/`;
   const componentDir = `${schema.dir}` || `/`;
   const directory = `${rootDirectory}${componentDir}`;
+  const camelToKebabCase = (str) =>
+    str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 
   await componentGenerator(host, {
     name: schema.name,
@@ -20,7 +22,9 @@ export default async function (host: Tree, schema: any) {
   host.write(
     `${project!.root}/src/${directory}/${fileName}/${fileName}.tsx`,
     `
-      import styles from './${className}.module.scss'
+      import styles from './${camelToKebabCase(className).substring(
+        1
+      )}.module.scss'
 
       /* eslint-disable-next-line */
       export interface ${className}Props {}

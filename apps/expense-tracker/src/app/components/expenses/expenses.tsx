@@ -1,10 +1,9 @@
 import Card from '../UI/card/card';
-import ExpenseItem, {
-  ExpenseItemProps,
-} from '../expenses/components/expense-item/expense-item';
+import { ExpenseItemProps } from '../expenses/components/expense-item/expense-item';
 import styles from './expenses.module.scss';
 import ExpensesFilter from './components/expenses-filter/expenses-filter';
 import { useState } from 'react';
+import ExpensesList from './components/expenses-list/expenses-list';
 
 /* eslint-disable-next-line */
 export interface ExpensesProps {
@@ -29,14 +28,9 @@ export const Expenses = (props: ExpensesProps) => {
         onChangeFilter={changeFilterHandler}
         selected={filteredYear}
       />
-      {filteredItems.map((item: Expenses) => (
-        <ExpenseItem
-          title={item.title}
-          date={item.date}
-          amount={item.amount}
-          key={item.id}
-        />
-      ))}
+      <li>
+        <ExpensesList items={filteredItems} />
+      </li>
     </Card>
   );
 };

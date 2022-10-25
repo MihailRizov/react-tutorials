@@ -4,6 +4,7 @@ import styles from './expense-form.module.scss';
 /* eslint-disable-next-line */
 export interface ExpenseFormProps {
   onSaveExpenseData: (enteredExpenseData: ExpenseData) => void;
+  onCancelEditing: () => void;
 }
 
 export interface ExpenseData {
@@ -13,7 +14,7 @@ export interface ExpenseData {
 }
 
 const ExpenseForm = (props: ExpenseFormProps) => {
-  const { onSaveExpenseData } = props;
+  const { onSaveExpenseData, onCancelEditing } = props;
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState('');
@@ -51,6 +52,12 @@ const ExpenseForm = (props: ExpenseFormProps) => {
     // }));
   };
 
+  const clearUserInput = () => {
+    setEnteredTitle('');
+    setEnteredAmount(0);
+    setEnteredDate('');
+  };
+
   const submitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const expenseData: ExpenseData = {
@@ -59,11 +66,14 @@ const ExpenseForm = (props: ExpenseFormProps) => {
       date: new Date(enteredDate),
     };
 
-    setEnteredTitle('');
-    setEnteredAmount(0);
-    setEnteredDate('');
-
+    onCancelEditing();
+    clearUserInput();
     onSaveExpenseData(expenseData);
+  };
+
+  const cancelHandler = () => {
+    onCancelEditing();
+    clearUserInput();
   };
 
   return (
@@ -99,6 +109,9 @@ const ExpenseForm = (props: ExpenseFormProps) => {
         </div>
       </div>
       <div className={styles['new-expense__actions']}>
+        <button type='button' onClick={cancelHandler}>
+          Cancel
+        </button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>

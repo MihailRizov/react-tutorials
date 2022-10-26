@@ -4,6 +4,7 @@ import styles from './expenses.module.scss';
 import ExpensesFilter from './components/expenses-filter/expenses-filter';
 import { useState } from 'react';
 import ExpensesList from './components/expenses-list/expenses-list';
+import ExpenseChart from './components/expense-chart/expense-chart';
 
 /* eslint-disable-next-line */
 export interface ExpensesProps {
@@ -28,6 +29,7 @@ export const Expenses = (props: ExpensesProps) => {
         onChangeFilter={changeFilterHandler}
         selected={filteredYear}
       />
+      <ExpenseChart expenses={filteredItems} />
       <ExpensesList items={filteredItems} />
     </Card>
   );

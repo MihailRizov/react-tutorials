@@ -28,9 +28,7 @@ export const Expenses = (props: ExpensesProps) => {
         onChangeFilter={changeFilterHandler}
         selected={filteredYear}
       />
-      <li>
-        <ExpensesList items={filteredItems} />
-      </li>
+      <ExpensesList items={filteredItems} />
     </Card>
   );
 };

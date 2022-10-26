@@ -18,12 +18,13 @@ const ExpensesList = (props: ExpensesListProps) => {
   return (
     <ul className={styles['expenses-list']}>
       {items.map((item: Expenses) => (
-        <ExpenseItem
-          title={item.title}
-          date={item.date}
-          amount={item.amount}
-          key={item.id}
-        />
+        <li key={item.id}>
+          <ExpenseItem
+            title={item.title}
+            date={item.date}
+            amount={item.amount}
+          />
+        </li>
       ))}
     </ul>
   );

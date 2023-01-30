@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import AddUser from './components/users/add-user/add-user';
 
 export function App() {
   return (
-    <>
-      <NxWelcome title='practice-project-add-user' />
-      <div />
-    </>
+    <div>
+      <AddUser />
+    </div>
   );
 }
 

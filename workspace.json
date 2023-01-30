@@ -4,6 +4,8 @@
   "projects": {
     "expense-tracker": "apps/expense-tracker",
     "expense-tracker-e2e": "apps/expense-tracker-e2e",
+    "practice-project-add-user": "apps/practice-project-add-user",
+    "practice-project-add-user-e2e": "apps/practice-project-add-user-e2e",
     "react-style-tutorial": "apps/react-style-tutorial",
     "react-style-tutorial-e2e": "apps/react-style-tutorial-e2e",
     "react-test": "apps/react-test",

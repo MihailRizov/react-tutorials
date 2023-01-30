@@ -1,0 +1,86 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/practice-project-add-user/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/practice-project-add-user",
+        "index": "apps/practice-project-add-user/src/index.html",
+        "baseHref": "/",
+        "main": "apps/practice-project-add-user/src/main.tsx",
+        "polyfills": "apps/practice-project-add-user/src/polyfills.ts",
+        "tsConfig": "apps/practice-project-add-user/tsconfig.app.json",
+        "assets": [
+          "apps/practice-project-add-user/src/favicon.ico",
+          "apps/practice-project-add-user/src/assets"
+        ],
+        "styles": ["apps/practice-project-add-user/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/practice-project-add-user/src/environments/environment.ts",
+              "with": "apps/practice-project-add-user/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "practice-project-add-user:build",
+        "hmr": true,
+        "open": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "practice-project-add-user:build:development"
+        },
+        "production": {
+          "buildTarget": "practice-project-add-user:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/practice-project-add-user/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/practice-project-add-user"],
+      "options": {
+        "jestConfig": "apps/practice-project-add-user/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

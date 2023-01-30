@@ -6,9 +6,11 @@
     "start": "nx serve",
     "start-track": "yarn start --project=expense-tracker",
     "start-style": "yarn start --project=react-style-tutorial",
+    "start-user": "yarn start --project=practice-project-add-user",
     "create-component": "nx workspace-generator react-component",
     "create-track-cmp": "yarn create-component --project=expense-tracker",
     "create-style-cmp": "yarn create-component --project=react-style-tutorial",
+    "create-user-cmp": "yarn create-component --project=practice-project-add-user",
     "build": "nx build",
     "test": "nx test"
   },

@@ -3,7 +3,7 @@ import styles from './card.module.scss';
 /* eslint-disable-next-line */
 export interface CardProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Card = (props: CardProps) => {

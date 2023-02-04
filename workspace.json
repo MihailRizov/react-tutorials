@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "effects-reducers-context": "apps/effects-reducers-context",
+    "effects-reducers-context-e2e": "apps/effects-reducers-context-e2e",
     "expense-tracker": "apps/expense-tracker",
     "expense-tracker-e2e": "apps/expense-tracker-e2e",
     "practice-project-add-user": "apps/practice-project-add-user",

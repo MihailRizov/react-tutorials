@@ -1,0 +1,86 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/effects-reducers-context/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/effects-reducers-context",
+        "index": "apps/effects-reducers-context/src/index.html",
+        "baseHref": "/",
+        "main": "apps/effects-reducers-context/src/main.tsx",
+        "polyfills": "apps/effects-reducers-context/src/polyfills.ts",
+        "tsConfig": "apps/effects-reducers-context/tsconfig.app.json",
+        "assets": [
+          "apps/effects-reducers-context/src/favicon.ico",
+          "apps/effects-reducers-context/src/assets"
+        ],
+        "styles": ["apps/effects-reducers-context/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/effects-reducers-context/src/environments/environment.ts",
+              "with": "apps/effects-reducers-context/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "effects-reducers-context:build",
+        "hmr": true,
+        "open": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "effects-reducers-context:build:development"
+        },
+        "production": {
+          "buildTarget": "effects-reducers-context:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/effects-reducers-context/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/effects-reducers-context"],
+      "options": {
+        "jestConfig": "apps/effects-reducers-context/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

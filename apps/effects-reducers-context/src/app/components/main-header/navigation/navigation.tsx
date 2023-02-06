@@ -1,12 +1,11 @@
+import { useContext } from 'react';
+import AuthContext, { AuthState } from '../../../store/auth-context';
 import styles from './navigation.module.scss';
-
-export interface NavigationProps {
-  isLoggedIn: boolean;
-  onLogout: () => void;
-}
+// eslint-disable-next-line
+export interface NavigationProps {}
 
 const Navigation = (props: NavigationProps) => {
-  const { isLoggedIn, onLogout } = props;
+  const { isLoggedIn, onLogout } = useContext(AuthContext) as AuthState;
   return (
     <nav className={styles['nav']}>
       <ul>

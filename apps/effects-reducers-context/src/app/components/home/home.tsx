@@ -1,9 +1,7 @@
 import Card from '../UI/card/card';
 import styles from './home.module.scss';
-
-export interface HomeProps {
-  onLogout: () => void;
-}
+// eslint-disable-next-line
+export interface HomeProps {}
 
 const Home = (props: HomeProps) => {
   return (

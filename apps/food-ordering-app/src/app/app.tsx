@@ -1,12 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import Header from './components/layout/header/header';
+import Meals from './components/meals/meals/meals';
 
 export function App() {
   return (
     <>
-      <NxWelcome title='food-ordering-app' />
-      <div />
+      <Header />
+      <main>
+        <Meals />
+      </main>
     </>
   );
 }
